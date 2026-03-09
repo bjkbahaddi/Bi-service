@@ -3,238 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر الاشتراكات الرقمية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Wasf.ai - مستقبل صناعة المحتوى</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #0f0f13;
-            --card-bg: #1c1c24;
-            --primary-color: #e50914; /* لون نتفليكس كمثال */
-            --text-color: #ffffff;
-            --text-muted: #a0a0b0;
-            --whatsapp-color: #25D366;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(to bottom, #14141a, var(--bg-color));
-            border-bottom: 1px solid #2a2a35;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* شبكة المنتجات */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        /* تصميم الكارت */
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #2a2a35;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            border-color: var(--primary-color);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
-
-        .netflix-icon { color: #e50914; }
-        .spotify-icon { color: #1DB954; }
-        .youtube-icon { color: #FF0000; }
-        .amazon-icon { color: #FF9900; }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .price span {
-            font-size: 1rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .features {
-            list-style: none;
-            margin: 15px 0;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .features li {
-            margin-bottom: 8px;
-        }
-
-        .btn-whatsapp {
-            display: inline-block;
-            width: 100%;
-            background-color: var(--whatsapp-color);
-            color: white;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: background 0.3s;
-            margin-top: 10px;
-        }
-
-        .btn-whatsapp i {
-            margin-left: 8px;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #1ebe57;
-        }
-
-        /* زر واتساب العائم للمساعدة العامة */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background-color: var(--whatsapp-color);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            text-decoration: none;
-            z-index: 1000;
-            transition: transform 0.3s;
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.1);
-        }
+        body { font-family: 'Tajawal', sans-serif; background: #0f172a; color: white; scroll-behavior: smooth; }
+        .hero-gradient { background: radial-gradient(circle at center, #1e3a8a 0%, #0f172a 70%); }
+        .card-blur { background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .locked-overlay { filter: blur(4px); pointer-events: none; user-select: none; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>متجر الاشتراكات الرقمية</h1>
-        <p>أفضل أسعار الاشتراكات لأكثر من 50 خدمة عالمية والتسليم فوري</p>
+    <header class="hero-gradient min-h-screen flex flex-col items-center justify-center text-center px-4">
+        <nav class="absolute top-0 w-full p-6 flex justify-between items-center max-w-6xl">
+            <div class="text-2xl font-bold text-blue-500">Wasf<span class="text-white">.ai</span></div>
+            <a href="#pricing" class="bg-blue-600 px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition">ابدأ الآن</a>
+        </nav>
+        
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">ذكاء اصطناعي <br><span class="text-blue-500">يصنع محتواك في ثوانٍ</span></h1>
+        <p class="text-slate-400 max-w-2xl text-lg mb-8">وداعاً لعناء الكتابة اليدوية. استخدم أدواتنا المتطورة لوصف منتجاتك، تلخيص ملفاتك، واختيار أسماء مشاريعك بضغطة زر واحدة.</p>
+        <div class="flex gap-4">
+            <a href="#services" class="bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-slate-200 transition">اكتشف الخدمات</a>
+            <a href="#tools" class="bg-slate-800 border border-slate-700 px-8 py-3 rounded-xl font-bold hover:bg-slate-700 transition">جرب الأداة</a>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="services-grid">
+    <section id="services" class="py-24 max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16">لماذا تختار Wasf.ai؟</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card-blur p-8 rounded-3xl text-center">
+                <div class="text-4xl mb-4">🚀</div>
+                <h3 class="text-xl font-bold mb-3">سرعة فائقة</h3>
+                <p class="text-slate-400 text-sm">توليد نصوص تسويقية وبحثية في أقل من 3 ثوانٍ بدقة متناهية.</p>
+            </div>
+            <div class="card-blur p-8 rounded-3xl text-center">
+                <div class="text-4xl mb-4">🤖</div>
+                <h3 class="text-xl font-bold mb-3">ذكاء GPT-4</h3>
+                <p class="text-slate-400 text-sm">نعتمد على أقوى نماذج الذكations الاصطناعي لضمان جودة لغوية مبهرة.</p>
+            </div>
+            <div class="card-blur p-8 rounded-3xl text-center">
+                <div class="text-4xl mb-4">💰</div>
+                <h3 class="text-xl font-bold mb-3">توفير التكاليف</h3>
+                <p class="text-slate-400 text-sm">وفر مئات الدولارات التي كنت تدفعها لكتاب المحتوى والمترجمين.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="py-24 bg-slate-900/50 relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4">جرب المنصة الآن</h2>
+            <p class="text-center text-slate-500 mb-12">اختر الأداة وابدأ العمل (يتطلب كود تفعيل للنتائج)</p>
             
-            <div class="card">
-                <i class="fa-brands fa-neos service-icon netflix-icon"></i>
-                <h3>اشتراك نتفليكس</h3>
-                <div class="price">40<span> درهم / شهر</span></div>
-                <ul class="features">
-                    <li>باقة 4K Ultra HD</li>
-                    <li>ملف شخصي خاص بك</li>
-                    <li>ضمان كامل المدة</li>
-                </ul>
-                <a href="https://wa.me/21260040895?text=أهلاً، أريد طلب اشتراك نتفليكس" class="btn-whatsapp" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i> اطلب الآن
-                </a>
+            <div id="toolInterface" class="card-blur p-8 rounded-[2.5rem] relative overflow-hidden">
+                <div id="lockOverlay" class="absolute inset-0 z-50 flex flex-col items-center justify-center bg-slate-900/80 backdrop-blur-md hidden">
+                    <div class="bg-slate-800 p-8 rounded-3xl border border-blue-500/50 text-center max-w-sm mx-4 shadow-2xl">
+                        <div class="text-4xl mb-4">🔑</div>
+                        <h3 class="text-xl font-bold mb-2">هذه الميزة للمشتركين فقط</h3>
+                        <p class="text-slate-400 text-sm mb-6">يرجى إدخال كود التفعيل الخاص بك لرؤية سحر الذكاء الاصطناعي.</p>
+                        <input id="accessKey" type="text" placeholder="أدخل الكود هنا" class="w-full p-3 bg-slate-900 rounded-xl mb-4 border border-slate-700 text-center">
+                        <button onclick="unlock()" class="w-full bg-blue-600 py-3 rounded-xl font-bold mb-3">تفعيل الحساب</button>
+                        <a href="https://wa.me/212698984642" class="text-blue-400 text-xs hover:underline">طلب كود تفعيل جديد</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-4 mb-8 justify-center">
+                    <button onclick="selectTool('wasf')" class="bg-slate-800 px-6 py-2 rounded-full border border-slate-700 hover:border-blue-500 transition">وصف منتجات</button>
+                    <button onclick="selectTool('talkhis')" class="bg-slate-800 px-6 py-2 rounded-full border border-slate-700 hover:border-blue-500 transition">تلخيص نصوص</button>
+                    <button onclick="selectTool('nami')" class="bg-slate-800 px-6 py-2 rounded-full border border-slate-700 hover:border-blue-500 transition">اقتراح أسماء</button>
+                </div>
+
+                <div id="toolForm" class="space-y-4">
+                    <input id="pKey" type="password" placeholder="OpenAI API Key" class="w-full p-3 bg-slate-900 rounded-xl border border-slate-700">
+                    <textarea id="userInput" placeholder="اكتب تفاصيلك هنا..." class="w-full p-4 bg-slate-900 rounded-xl h-40 border border-slate-700 outline-none"></textarea>
+                    <button onclick="showLock()" class="w-full bg-blue-600 py-4 rounded-xl font-bold text-lg shadow-lg shadow-blue-900/40 transition">توليد النتيجة ✨</button>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="card">
-                <i class="fa-brands fa-youtube service-icon youtube-icon"></i>
-                <h3>يوتيوب بريميوم</h3>
-                <div class="price">25<span> درهم / شهر</span></div>
-                <ul class="features">
-                    <li>بدون إعلانات مزعجة</li>
-                    <li>تشغيل في الخلفية</li>
-                    <li>تفعيل على حسابك الشخصي</li>
-                </ul>
-                <a href="https://wa.me/212660040895?text=أهلاً، أريد طلب اشتراك يوتيوب بريميوم" class="btn-whatsapp" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i> اطلب الآن
-                </a>
-            </div>
+    <footer class="py-12 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <p>© 2024 Wasf.ai powred by bi-service- جميع الحقوق محفوظة</p>
+    </footer>
 
-            <div class="card">
-                <i class="fa-brands fa-spotify service-icon spotify-icon"></i>
-                <h3>سبوتيفاي بريميوم</h3>
-                <div class="price">20<span> درهم / شهر</span></div>
-                <ul class="features">
-                    <li>استماع بدون إنترنت</li>
-                    <li>بدون إعلانات</li>
-                    <li>تفعيل على حسابك</li>
-                </ul>
-                <a href="https://wa.me/212660040895?text=أهلاً، أريد طلب اشتراك سبوتيفاي" class="btn-whatsapp" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i> اطلب الآن
-                </a>
-            </div>
+    <script>
+        const MASTER_CODE = "WASF2024"; // كودك الخاص
 
-            <div class="card">
-                <i class="fa-brands fa-amazon service-icon amazon-icon"></i>
-                <h3>أمازون برايم فيديو</h3>
-                <div class="price">30<span> درهم / شهر</span></div>
-                <ul class="features">
-                    <li>أفلام ومسلسلات حصرية</li>
-                    <li>جودة عالية 4K</li>
-                    <li>ضمان ذهبي</li>
-                </ul>
-                <a href="https://wa.me/212660040895?text=أهلاً، أريد طلب اشتراك أمازون برايم" class="btn-whatsapp" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i> اطلب الآن
-                </a>
-            </div>
+        function selectTool(tool) {
+            const input = document.getElementById('userInput');
+            if(tool === 'wasf') input.placeholder = "أدخل اسم المنتج ومميزاته...";
+            if(tool === 'talkhis') input.placeholder = "أدخل النص الطويل للتلخيص...";
+            if(tool === 'nami') input.placeholder = "صف فكرة مشروعك للحصول على اسم...";
+        }
 
-            </div>
-    </div>
+        function showLock() {
+            document.getElementById('lockOverlay').classList.remove('hidden');
+        }
 
-    <a href="https://wa.me/212660040895?text=أهلاً، لدي استفسار بخصوص الاشتراكات" class="floating-whatsapp" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
+        function unlock() {
+            const code = document.getElementById('accessKey').value;
+            if(code === MASTER_CODE) {
+                document.getElementById('lockOverlay').innerHTML = `
+                    <div class="text-center text-green-400 font-bold p-4 bg-green-900/20 rounded-xl">
+                        ✓ تم التفعيل! يمكنك الآن استخدام الأدوات بحرية.
+                    </div>
+                `;
+                setTimeout(() => {
+                    document.getElementById('lockOverlay').style.display = 'none';
+                }, 1500);
+            } else {
+                alert("الكود غير صحيح!");
+            }
+        }
+    </script>
 </body>
 </html>
